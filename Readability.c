@@ -9,12 +9,12 @@
 #include <ctype.h>
 #include <math.h>
 
-//variables for counting letters, words & sentences
+//global variables for counting letters, words & sentences
 int counterL = 0;
 int counterW = 1;
 int counterS = 0;
 
-//function prototypes
+//functions prototypes
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
