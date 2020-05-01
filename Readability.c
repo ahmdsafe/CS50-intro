@@ -9,15 +9,15 @@
 #include <ctype.h>
 #include <math.h>
 
-//global variables for counting letters, words & sentences
-int counterL = 0;
-int counterW = 1;
-int counterS = 0;
+//variables for counting letters, words & sentences
+float counterL = 0;
+float counterW = 1;
+float counterS = 0;
 
-//functions prototypes
-int count_letters(string text);
-int count_words(string text);
-int count_sentences(string text);
+//function prototypes
+float count_letters(string text);
+float count_words(string text);
+float count_sentences(string text);
 
 // getting the text from user, calculating and printing the index
 int main(void)
@@ -25,9 +25,9 @@ int main(void)
     // getting the text from user
     string text = get_string("text: ");  
     // getting value of counters from functions
-    int L = count_letters(text);
-    int W = count_words(text);
-    int S = count_sentences(text);  
+    float L = count_letters(text);
+    float W = count_words(text);
+    float S = count_sentences(text);  
     //calculating the index
     float index = 0.0588 * (L * 100 / W) - 0.296 * (S * 100 / W) - 15.8;
     index = round(index);
@@ -47,7 +47,7 @@ int main(void)
  }
 
 //function for counting letters
-int count_letters(string text)
+float count_letters(string text)
 {
   for (int i=0, n = strlen(text); i < n; i++)
     {
@@ -60,7 +60,7 @@ int count_letters(string text)
 }
 
 //function for counting words
-int count_words(string text)
+float count_words(string text)
 {
   for (int i=0, n = strlen(text); i < n; i++)
     {
@@ -73,7 +73,7 @@ int count_words(string text)
 }
 
 //function for counting sentences
-int count_sentences(string text)
+float count_sentences(string text)
 {
     for (int i=0, n = strlen(text); i < n; i++)
     {
