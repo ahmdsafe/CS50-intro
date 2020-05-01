@@ -56,7 +56,7 @@ int count_letters(string text)
             counterL++;
         }
     }
- return (int)counterL;
+ return counterL;
 }
 
 //function for counting words
@@ -69,7 +69,7 @@ int count_words(string text)
             counterW++;
         }
     }
- return (int)counterW;
+ return counterW;
 }
 
 //function for counting sentences
@@ -82,5 +82,5 @@ int count_sentences(string text)
             counterS++;
         }
     }
- return (int)counterS;
+ return counterS;
 }
