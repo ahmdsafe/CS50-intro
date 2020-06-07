@@ -20,7 +20,7 @@
 // Represents a node in a hash table
 typedef struct node
 {
-    char *word;
+    char word[LENGTH + 1];
     struct node *next;
 } node;
 
@@ -95,7 +95,7 @@ bool load(const char *dictionary)
         {
             return false;
         }
-        n->word = malloc(strlen(word) + 1);
+        
         strcpy(n->word, word);
         
         //send the word to the hash function to get back its index in the table
@@ -146,7 +146,7 @@ bool unload(void)
             cursor = cursor->next;
             free(tmp);
         }
-        return true;
+        free(cursor);
     }
-    return false;
+    return true;
 }
